@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorPrimaryDark" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+<!--        <com.google.android.gms.ads.AdView-->
+<!--            xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--            android:id="@+id/adViewSign"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            ads:adSize="SMART_BANNER"-->
+<!--            ads:adUnitId="ca-app-pub-8011674951494696/3226780719">-->
+<!--        </com.google.android.gms.ads.AdView>-->
+
+    <ListView android:id="@+id/listView19" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:listSelector="#fff6de05"
+        android:divider="@color/colorPrimary" android:dividerHeight="2.0dip"
+        android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+
+    </LinearLayout>
+</RelativeLayout>

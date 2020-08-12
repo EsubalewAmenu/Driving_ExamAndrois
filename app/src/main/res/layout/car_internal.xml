@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorPrimary" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView android:id="@+id/scrollView2" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+        android:layout_centerHorizontal="true">
+
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnPiston" android:background="@drawable/piston" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/piston" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnBattry" android:background="@drawable/battery" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/battry" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnCarburetor" android:background="@drawable/carburetor" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/carburetor" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnRadiator" android:background="@drawable/radiator" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/radiator" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnDashboard" android:background="@drawable/dashboard" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/dashboard" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnBrakes" android:background="@drawable/brakes" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/brakes" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnEnginfun" android:background="@drawable/enginfun" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enginfun" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSparkplug" android:background="@drawable/sparkplug" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sparkplug" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSidemirror" android:background="@drawable/sidemirror" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sidemirror" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnGearchangerm" android:background="@drawable/gearchangerm" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/gearchangerm" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnGearchangera" android:background="@drawable/gearchangera" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/gearchangera" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnCamshaft" android:background="@drawable/camshaft" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/camshaft" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnClutches" android:background="@drawable/clutches" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/clutches" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnBalestra" android:background="@drawable/balestra" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/balestra" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnBody" android:background="@drawable/body" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/body" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnDifferential" android:background="@drawable/differential" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/differential" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnFuse" android:background="@drawable/fuse" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/fuse" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnHandbreak" android:background="@drawable/handbreak" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/handbreak" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSpring" android:background="@drawable/spring" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/spring" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnTyre" android:background="@drawable/tyre" android:padding="5.0dip"
+                    android:layout_width="wrap_content" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/tyre" />
+
+            </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

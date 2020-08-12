@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/app_bar_main">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            >
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="left|right|center_horizontal|center_vertical|fill_horizontal|center|fill|start|end"
+                android:layout_weight="1.0"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:text="@string/intro"
+
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/doneQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textAllCaps="false"
+                    android:textSize="18sp"/>
+
+                <ProgressBar
+                    android:id="@+id/unseenProgressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/custom_progress" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/percentAnsQue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+
+
+            <Button
+                android:id="@+id/questionnaireButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/start_questionnaire"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                />
+            <Button
+                android:id="@+id/btnExamList"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/questions_list"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+
+
+            <ImageView
+                android:id="@+id/imgBadge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/resultButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/show_result"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+                android:layout_weight="1.0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:text="@string/about_short"
+
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:textAllCaps="false"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,46 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/test_phone_owner">
+
+        <EditTextPreference
+            app:key="owner_name"
+            app:title="@string/owner_name"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="owner_phone"
+            app:title="@string/owner_phone"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory app:title="@string/test_setting_header">
+
+        <EditTextPreference
+            app:defaultValue="50"
+            app:key="no_of_que"
+            app:title="@string/no_of_que"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="n"
+            app:entries="@array/show_answer_entries"
+            app:entryValues="@array/show_answer_values"
+            app:key="show_answer"
+            app:title="@string/show_answer"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/test_veiw_header">
+
+        <EditTextPreference
+            app:defaultValue="70"
+            app:key="view_gap"
+            app:title="@string/radio_gap"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

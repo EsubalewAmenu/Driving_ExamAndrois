@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/colorPrimary" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView android:id="@+id/scrollView2" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+        android:layout_centerHorizontal="true">
+
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnAu" android:background="@drawable/au" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/au" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnAuc" android:background="@drawable/auc" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/auc" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnBusiness" android:background="@drawable/busness" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/business" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnCd" android:background="@drawable/cdeplomat" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cd" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnGov" android:background="@drawable/gov" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/gov" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnMove" android:background="@drawable/move" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/move" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnNgo" android:background="@drawable/ngo" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ngo" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnPersonal" android:background="@drawable/personal" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personel" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnPolice" android:background="@drawable/police" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/polic" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSpecial" android:background="@drawable/special" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/special" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSupport" android:background="@drawable/supprt" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/support" />
+
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnSupportc" android:background="@drawable/supportc" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/supportc" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnTaxi" android:background="@drawable/taxi" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/taxi" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnTempo" android:background="@drawable/tempo" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/tempo" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnUn" android:background="@drawable/un" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/un" />
+
+                <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000"
+                    android:id="@+id/btnUnc" android:background="@drawable/unc" android:padding="5.0dip"
+                    android:layout_width="fill_parent" android:layout_height="150.0dip"
+                    android:layout_marginRight="15.0dip" />
+
+                <TextView android:textAppearance="?android:textAppearanceLarge" android:textStyle="bold"
+                    android:textColor="#ffffffff" android:gravity="center"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/unc" />
+
+            </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

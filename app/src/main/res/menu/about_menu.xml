@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/about_action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item android:icon="@android:drawable/ic_menu_compass" android:id="@+id/moreapp" android:title="More App" />
+    <item android:icon="@android:drawable/ic_menu_share" android:id="@+id/shareapp" android:title="Share App" />
+    <item android:icon="@drawable/abf" android:id="@+id/rateapp" android:title="Rate App" />
+    <item android:icon="@drawable/abf" android:id="@+id/fb" android:title="Facebook" />
+    <item android:icon="@drawable/abf" android:id="@+id/aboutmenu" android:title="About Us" />
+    <item android:icon="@drawable/abf" android:id="@+id/topinfo" android:orderInCategory="90" android:title="" app:showAsAction="always" />
+    <item android:icon="@android:drawable/ic_menu_close_clear_cancel" android:id="@+id/exitmenu" android:title="Exit" />
+</menu>

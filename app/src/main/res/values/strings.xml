@@ -1,0 +1,286 @@
+<resources>
+    <string name="app_name">የመንጃ ፈቃድ አጋዥ</string>
+
+    <string name="start_questionnaire">(የተውጣጣ) ፈተናውን ጀምር</string>
+    <string name="questions_list">(በምርጫ) ፈተናውን ጀምር</string>
+
+    <string name="test_setting_header">የመልመጃ ጥያቄ ገፅ  ማስተካከያ</string>
+
+    <string name="show_result">ውጤቴን አሳየኝ</string>
+    <string name="finish">ጨርስ</string>
+    <string name="next">ቀጣይ</string>
+    <string name="previous">የከዚ በፊት</string>
+    በ
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_subtitle">በ Herma Apps የተሰራ</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">ማስተካከያ/Settings</string>
+
+    <string name="menu_share">ለሌሎች አካፍል</string>
+
+    <string name="trafic_sign">የትራፊክ ምልክቶች</string>
+    <string name="exam_questions">የፈተና ጥያቄዎች</string>
+
+    <string name="intro"> ከ 5,500+ በላይ የመንጃ ፈተና አጋዥ ጥያቄዎች ለእርስዎ....</string>
+    <string name="about_short">DataScience P.L.C. \n\nWe are dedicated to develop mobile applications for *free*. \n\nPlease contact us on: apps@datascienceplc.com</string>
+    <string name="about">ስለ</string>
+    <string name="menu_on_the_way">በማሽከርከር ላይ ለሚከሰቱ</string>
+    <string name="menu_drving_license">ከመንጃ ፈቃድ ጋር በተገናኘ</string>
+    <string name="sle">ስለ አፑ</string>
+    <string name="cause">የትራፊክ አደጋ መንስኤዎች</string>
+    <string name="action_rate">አስተያየቶን ይስጡን</string>
+    <string name="action_store">ሌሎች አፕፖች</string>
+    <string name="exit">ዝጋ</string>
+    <string name="penality">የቅጣት/የጥፋት አይነቶች</string>
+
+    <!-- Strings related to the network-->
+    <string name="no_network_title">ከ ኢንተርኔት አልተገናኙም።</string>
+    <string name="no_network_message">ኢንተርኔት ከሌለ ሽልማት የለም። ነገር ግን የተውጣጣ ጥያቄ መቀጠል ይችላሉ።</string>
+    <string name="check_network">No network available.\nPlease make sure you are connected to the Internet.</string>
+    <string name="go_to_settings">Go to settings</string>
+
+    <string name="app_description">ይህ አፕሊኬሽን መኪና ከመንዳት ጋር ተያይዞ ልናውቃቸው የሚገቡ ነገሮችን በሙሉ አካቶ የያዘ ነው።\n\nእነዚህ ልናቃቸው የሚገቡ ነገሮች እንደ:- \n. የትራፊክ አደጋ መንስኤዎች\n. የትራፊች ምልክቶች\n. የፈተና ጥያቄዎች\n. የጥፋት እና የቅጣት አይነቶች\n. የመኪና የውስጥ ክፍሎች\n. (በኢትዮጵያ) የታርጋ አይነቶች እና ሌሎችም ናችው።</string>
+
+
+    <string name="on_licence_short">ቀላል ጥፋት</string>
+    <string name="on_licence_long">ከባድ ጥፋት</string>
+
+    <string name="_1st">አንደኛ ደረጃ ጥፋት አይነትና ቅጣታቸዉ</string>
+    <string name="_2nd">ሁለተኛ ደረጃ ጥፋት አይነትና ቅጣታቸዉ</string>
+    <string name="_3rd">ሶስተኛ ደረጃ ጥፋት አይነትና ቅጣታቸዉ</string>
+    <string name="_4th">አራተኛ ደረጃ ጥፋት አይነትና ቅጣታቸዉ</string>
+    <string name="_5th">አምስተኛ ደረጃ የጥፋት አይነትና ቅጣታቸዉ</string>
+    <string name="_6th">ስድስተኛ ደረጃ የጥፋት አይነትና ቅጣታቸዉ</string>
+
+
+    <string name="text_expanded">Expanded</string>
+    <string name="text_collapsed">Collapsed</string>
+
+    <string name="title_activity_delete">DeleteActivity</string>
+
+    <string name="others">ሌሎች</string>
+
+    <string name="menu_car_internal">የመኪናል የውስጥ ክፍሎች</string>
+
+
+    <string name="menu_on_plate_type">የታርጋ አይነቶች</string>
+
+    <string name="piston">የሞተር ፒስተን\nፒስተኖች የሞተር ኃይልን የሚይዙ አሠራሮች ስለሆኑ ፒስተን እጅግ በጣም አስፈላጊ ከሆኑት ክፍሎች ውስጥ አንዱ ነው ፡፡ ፒስተኖቹ በሲሊንደሩ ውስጥ ይገኛሉ ፡፡ … በሲሊንደሩ ውስጥ ግፊት የሚፈጠረው ፒስተን ከቀዳሚው ዑደት ወደ ላይኛው ሲሊንደር ሲመለስ ነው ፡፡</string>
+    <string name="tyre">Tyre/ጎማ\nበአጠቃላይ ፣ ሁለት ዋና የጎማዎች አይነቶች አሉ ፣ ባለቲዩብ እና ቲዩብ ለስ (‹ባለ አየር ጎማዎች› እና “አየር አልባ ጎማዎች”) "tubed tyres" and "tubeless tyres"፡ ተብለው ይጠራሉ፡፡</string>
+    <string name="spring">Coil Spring/የሽቦ ስፕሪንግ\nየሽቦ ስፕሪንግ የሚሰራው ከብረት ዘንግ ሲሆን በአስችጋሪ መንግዶች ላይ በመዘርጋት እና በመታጠፍ እንዳይጎዳ እና እንዲቋቋም ያደርጋል።</string>
+    <string name="handbreak">የመኪና ማቆሚያ ብሬክ ፣ ድንገተኛ ብሬክ ወይም ኢ-ብሬክ ተብሎም የሚጠራ ፣ በሜካኒካዊ እጅ መቆጣጠሪያ የመጠባበቂያ ብሬክ ሲስተም ነው ፡፡ ... መኪና በምናቆምበት ውቅት ይህን የፍሬን አይነት ስንጠቀም መኪናው ሙሉ በሙሉ እንዳይንሸራተት ይረዳናል፡፡</string>
+    <string name="fuse">Fuses/ፊዩዝ\nፊዩዝ የኤሌክትሪክ ሀይል በዝቶ በሚመጣበት ውቅት የተሽከርካሪዎችን የኤሌክትሪክ መሳሪያዎችን እንዳይቃጠል ለመጠበቅ ያገለግላሉ፡፡ \n\nበመኪና-ባልሆኑ የኤሌክትሪክ ምርቶች ውስጥ አልፎ አልፎ ጥቅም ላይ ይውላሉ።፡</string>
+    <string name="differential">Differential/ዲፈረንሻል\nዲፈረንሻል ጎማ በተለያየ ፍጥነት እንዲሽከረከር የሚያስችለውን ወደ ጎማ የሚሄድ የሞተርን ሀይል ለሁለት የተለያየ ፍጥነት የሚከፍል መሣሪያ ነው። በሁሉም ዘመናዊ መኪኖች እና የጭነት መኪናዎች ላይ እንዲሁም 4X4 (አራት-ጎማ-ተሽከርካሪዎች) ላይ ይገኛል ፡፡</string>
+    <string name="body">Body/ቦዲ\nበላዩ ላይ በር ፣ መስኮት .... የያዘ  የመኪና የውጪ ክፍል ነው።</string>
+    <string name="balestra">Leaf spring/ባሌስትራ\nባስቸጋሪ/በወጣ ገባ መንገዶች ላይ የሚከሰትን ንቅናቄን በቶሎ ለመቆጣጠር ያገለግላል።</string>
+
+
+    <string name="clutches">Clutches\nየተስተካከለ የተሽከርካሪ እንቅስቃሴ እንዲኖር በቀስታ ኃይልን ከኤንጂኑ ያቅርቡባል። ከአነዳድ ጋር የተዛመደ ንዝረትን ለመቀነስ በፀጥታ ይረዳል።</string>
+    <string name="camshaft">Camshaft/ካምሻፍት\nየሞተር ውስጠ-ቃጠሎ ሜካኒካዊ ክፍል። በትክክለኛው ጊዜ የሞተርን የመግቢያ እና የጭስ ቫልቮች ይከፍታል እና በትክክል በተከፈተው ቅደም ተከተል ይዘጋል። </string>
+    <string name="gearchangera">Automatic transmissions/አውቶማቲክ ማርሽ\nበተሽከርካሪው ፍጥነት ላይ በመመርኮዝ ቀስ በቀስ እራሱ ይቀያይራል</string>
+    <string name="gearchangerm">Manual transmissions/ማኑል ማርሽ\nየማርሽ ዘንጉን በመጠቀም ፍጥነት ላይ በመመርኮዝ ቀስ በቀስ አብዛኛውን ጊዜ እስከ 5ተኛ ማርሽ ድረስ በሰው/በሹፌር ጉልበት ይቀያየራል</string>
+    <string name="sidemirror">Side mirror/የጎን መስታወት\nለነጂው ከኋላ ያለውን ነገር/እንቅስቃሴ መመልክቻ መስታወት ነው።</string>
+    <string name="sparkplug">Spark plug/ካንዴላ\nየኤሌክትሪክ የእሳት ነበልባል በመፍጠር የታመቀውን ነዳጅ / አየር ድብልቅን ለማቃለል ያገለግላል።፡</string>
+    <string name="enginfun">Engine fan/የአየር የማቀዝቀዣ\nየአየር የማቀዝቀዣ ከራዲያተሩ ፊት ወይም ኋላ ክፍል ይገኛል፡፡ ይህ የአየር የማቀዝቀዣ ከራዲያተሩ ወደ መኪናው ሞተር የሚሰራጨውን አየር/ውሀ ለማቀዝቀዝ ይጠቅማል፡፡</string>
+    <string name="brakes">Brake system/የብሬክ ሲስተም\nየብሬክ ሲስተም ዋና ተግባር የተሽከርካሪ ፍጥነትን ማገድ ወይም መቀነስ ነው፡፡ የፍሬን ፔዳሉን በመጠቀም የብሬክ ፓነሎች ከመሽከርከሪያው ጋር በተያያዘው ተሽከርካሪ ላይ ይወጋሉ ፣ ከዚያ በኃይል ፍጥነቱ ምክንያት ተሽከርካሪው እንዲዘገይ ያስገድዳል።</string>
+    <string name="dashboard">Dashboard/ዳሽቦርድ\nዳሽቦርድ ብዙውን ጊዜ ከተሽከርካሪው ነጂ ፊት ለፊት የሚገኝ የመቆጣጠሪያ ፓነል ሲሆን መሳሪያውን እና የተሽከርካሪው አሠራር/ሁኔታ ያሳያል፡፡</string>
+    <string name="radiator">የራዲያተሩ የሙቀት ማቀዝቀዣ ማስተላለፊያ ዓይነት ነው፡፡ ከአየር ማቅዝቀዣ የሚመጣውን ቀዝቃዛ አየር ተቀብሎ በውስጡ ያነውን የሞቀ ውሀ የማቀዝቀዣ ሲስተም ነው። አብዛኛዎቹ ዘመናዊ መኪኖች አሉሚኒየም ራዲያተሮችን ይጠቀማሉ፡፡ እነዚህ የራዲያተሮች ቀጫጭን እና ጠፍጣፋ የአሉሚኒየም ዘንጎች ወደ አሉሚኒየም ቱቦዎች በመጠምዘዝ የተሠሩ ናቸው ፡፡</string>
+    <string name="carburetor">Carburetor/ካርበሪተር\nየካርበሪተሮች ዋና ተግባር አየር እና ነዳጅ ለማቀላቀል እና ከፍተኛ የሚቀጣጠል ድብልቅን ይሰጣል፡፡ የሞተር ፍጥነትን ይቆጣጠራል። እንዲሁም የአየር-ነዳጅ ምጣኔን ያስተካክላል።</string>
+    <string name="battry">Battery/ባትሪ\nባትሪ ሊሞላ የሚችል ለተሽከርካሪ የኤሌክትሪክ ሀይልን የሚሰጥ ነው። ዋናው ዓላማ ሞተሩ እንዲጀምር (starter) የኤሌክትሪክ ሀይል መመገብ ነው፡፡ ሞተሩ ከተነሳ በኋላ ለመኪናው የኤሌክትሪክ ሥርዓቶች ኃይል ይሰጣል፡፡</string>
+
+    <string name="unc">ታርጋ - የተባበሩት መንግስታት ለኮድ ዲፕሎማት አባላት</string>
+    <string name="un">ታርጋ -ለተባበሩት መንግስታት</string>
+    <string name="tempo">ታርጋ - ለእለት ብቻ የሚሰጥ</string>
+    <string name="taxi">ታርጋ - ታክሲ</string>
+    <string name="temp">ታርጋ - ተላላፊ</string>
+    <string name="supportc">ታርጋ - የእርዳታ ድርጅት ለኮድ ዲፕሎማት አባላት</string>
+    <string name="support">ታርጋ - የእርዳታ ድርጅት</string>
+    <string name="special">ታርጋ - ልዩ ትሽክርካሪ</string>
+
+    <string name="polic">ታርጋ - ፖሊስ</string>
+    <string name="personel">ታርጋ - የግል</string>
+    <string name="ngo">ታርጋ - መንስታዊ ላልሆኑ (NGO)</string>
+    <string name="move">ታርጋ - ተላላፊ</string>
+    <string name="gov">ታርጋ - የመንግስት</string>
+    <string name="cd">ታርጋ - ለኮድ ዲፕሎማት</string>
+    <string name="business">ታርጋ - የንግድ</string>
+    <string name="auc">ታርጋ - የአፍሪካ ህብረት ለኮድ ዲፕሎማት አባላት</string>
+    <string name="au">ታርጋ - የአፍሪካ ህብረት</string>
+    <string name="test_exam">የመልመጃ ፈተና</string>
+    <string name="answer">መልሶች</string>
+    <string name="pls_wait">እባክዎን ትንሽ ይጠብቁ...\nTelegram:-@drivers_training</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="show_answer">መልሱን እዛው አሳይ</string>
+    <string name="no_of_que">በአንዴ የሚጠየቅ ጥያቄ ብዛት</string>
+    <string name="test_veiw_header">እይታ ማስተካከያ</string>
+    <string name="radio_gap">በምርጫ መካከል ያለ ክፍተት</string>
+    <string name="owner_name">የእርስዎ ስም</string>
+    <string name="owner_phone">ስልክ ቁጥር</string>
+    <string name="test_phone_owner">የእርስዎ መረጃ</string>
+    <string name="go_to_exam_question">ወደ ተውጣጡ ጥያቄዎች ሂድ</string>
+    <string name="cancel">ተወው</string>
+    <string name="lishelemu_new">ሊሸለሙ ነው።</string>
+    <string name="rule">1. የሚጠበቅብዎት ከ80% በላይ ማምጣት ብቻ ነው።\n2. በአንድ ጊዜ የሚያሸንፉት የ5 ብር ካርድ ነው።\n3. ደጋግሞ መጫወት ይቻላል።</string>
+    <string name="win">እንካን ደስ አልዎት\nአሸንፈዋል።</string>
+    <string name="win_message">እስክናጣራ 48 ሰዐት ሊፈጅ ስለሚችል እባክዎ ይታገሱን።</string>
+    <string name="faild">ይቅርታ አላሸነፉም።</string>
+    <string name="faild_message">ሽልማቱን አያገኙም።\nነገር ግን ደግመው መሞከር ይችላሉ።</string>
+    <string name="award_questions">የሽልማት ጥያቄዎች</string>
+    <string name="hint_email">hint_email</string>
+    <string name="hint_password">hint_password</string>
+    <string name="login">login</string>
+
+    <!-- Preference Titles -->
+    <string-array name="string_array_on_licence_short">
+        <item>የአሽከርካሪ ብቃት ማረጋገጫ ፍቃድ ኑሮት ሳይዝ ያሽከረከረ
+</item>
+        <item>100 ብር ይቀጣል - ለመጀመሪያ ጊዜ</item>
+        <item>የእድሳት ጊዜ አሳልፎ የአሽከርካሪ ብቃት ማረጋገጫ ፍቃዱን ለማሳደስ የቀረበ አሽከርካሪ</item>
+        <item>150 ብር ይቀጣል - ለመጀመሪያ ጊዜ</item>
+        <item>የአሽከርካሪ ብቃት ማረጋገጫ ፍቃዱን ሳያሳድስ ተሸከርካሪ ያሽከረከረ</item>
+        <item>200 ብር ይቀጣል - ለመጀመሪያ ጊዜ</item>
+        <item>እነዚህ ጥፋቶች ከተደጋገሙ ፡-</item>
+        <item>ለሁለተኛ ጊዜ - 500 ብር</item>
+        <item>ለሶስተኛ ጊዜ - 1500 ብር</item>
+        <item>ለአራተኛ ጊዜ መንጃፍቃዱን ለአንድ ዓመት ማገድ፡፡</item>
+        <item>ለአምስተኛ ጊዜ መንጃ ፍቃዱን መሰረዝ፡፡</item>
+    </string-array>
+    <string-array name="string_array_on_licence_long">
+        <item>የአሽከርካሪ ብቃት ማረጋገጫ ፍቃድ ኑሮት ከምድቡ ዉጪ የሆነ ተሸከርካሪ ያሽከረከረ</item>
+        <item>ለመጀመሪያ ጊዜ - 1000 ብር ይቀጣል</item>
+        <item>ለሁለተኛ ጊዜ - 1500 ብር</item>
+        <item>የአሽከርካሪ ብቃት ማረጋገጫ ፍቃድ ኑሮት የሚያሽከረክረዉን ተሸከርካሪ ፍቃድ ለሌለዉ ሰዉ እንዲያሽከረክር መስጠት</item>
+        <item>ለመጀመሪያ ጊዜ - 3000 ብር ይቀጣል</item>
+        <item>ለሁለተኛ ጊዜ - 4500 ብር</item>
+        <item>የአሽከርካሪ ብቃት ማረጋገጫ ፍቃድ ሳይኖረዉ ተሸከርካሪ ያሽከረከረ</item>
+        <item>ለመጀመሪያ ጊዜ - 5000 ብር ይቀጣል</item>
+        <item>ለሁለተኛ ጊዜ - 7500 ብር</item>
+        <item>ለሶስተኛ ጊዜ ከላይ የተዘረዘሩትን ጥፋቶች ደጋግሞ የፈፀመ፡፡</item>
+        <item>መንጃ ድቃዱን ለ 1 ዓመት ማገድ፡፡</item>
+        <item>ለአራተኛ ጊዜ ከላይ የተዘረዘሩትን ጥፋቶች ደጋግሞ የፈፀመ፡፡</item>
+        <item>መንጃ ፍቃዱን መሰረዝ፡፡</item>
+    </string-array>
+
+    <!-- Messages Preferences -->
+    <string-array name="string_array_1st">
+        <item>1.		በመንገድ ላይ ተሸከርካሪ ማሳጠብ</item>
+        <item>2.			የጥሩምባ ድምፅ ያለ አግባብ እና ያልተፈቀደ ቦታ ላይ ያሰማ</item>
+        <item>3.		የጭንቅላት መከላከያ ሳያደርግ ሞተር ሳይክል ያሽከረከረ</item>
+        <item>4.		ከተፈቀደዉ የፍጥነት ገደብ በታች ያሽከረከረ</item>
+        <item>5.		በትርፍ ጭነት ላይ ምልክት ያላደረገ</item>
+        <item>6.		ተሸከርካሪ ያለጥንቃቄ የጎተተ</item>
+        <item>7.		የጭነት ማቀፊያ/ስፖንዳ/ ሳይኖረዉ እቃ የጫነ</item>
+        <item>እነዚህ ቅጣቶች 80 ብር ያስቀጣሉ፡፡</item>
+    </string-array>
+    <string-array name="string_array_2nd">
+        <item>1.		በተሸከርካሪ መግቢያ ወይም መዉጫ በር ላይ መንገድ ዘግቶ ያቆመ</item>
+        <item>2.		የቀኝ ጠርዙን ሳይዝ በዝግታ ያሽከረከረ</item>
+        <item>3.		የተከለከለ ቦታ ላይ ተሸከርካሪ ያቆመ</item>
+        <item>4.		ከተፈቀደለት ጊዜ በላይ ተሸከርካሪን መንገድ ላይ ያቆመ</item>
+        <item>5.		የተከለከለ ቦታ ላይ ተሸከርካሪን ያቆመ</item>
+        <item>6.		ሁለት እጁን መሪ ላይ ሳያደርግ ያሽከረከረ</item>
+        <item>እነዚህ ቅጣቶች 100 ብር ያስቀጣሉ፡</item>
+    </string-array>
+
+    <!-- Sync Preferences -->
+    <string-array name="string_array_3rd">
+        <item>1.		ጠባብ መንገድ ላይ ተሸከርካሪን ያቆመ</item>
+        <item>2.		ርቀቱን ሳይጠብቅ ያሽከረከረ</item>
+        <item>3.		የመንገድ አከፋፋይ መስመር/ደሴት/ ያቋረጠ</item>
+        <item>4.		የመቀመጫ ቀበቶ ሳያስር ያሽከረከረ</item>
+        <item>5.		ከተፈቀደለት ጊዜ በላይ የተበላሸን ተሸከርካሪ መንገድ ላይ የጠገነ</item>
+        <item>6.		በተሸከርካሪዉ ላይ የተጫነዉን ጭነት ያላሰረ ወይም ያላለበሰ</item>
+        <item>7.		ያልተፈቀደ ጭነት ከህዝብ ጋር የጫነ</item>
+        <item>8.		የትራፊክ ደሴት ላይ መንገድ ዘግቶ የቆመ</item>
+        <item>9.		ተሳፋሪን ጭኖ ነዳጅ ማደያ ገብቶ የቀዳ የህዝብ ትራንስፖርት ተሸከርካሪ</item>
+        <item>10.		በምሽት መብራት ሳያበራ ያሽከረከረ</item>
+        <item>11.		ከመጠን በላይ ጭስ፣ ዘይት ወይም ማኛዉም አይነት ፈሳሽ እያፈሰሰ የሚሄድ</item>
+        <item>12.		አሸዋ፣ ድንጋይ እና የመሳሰሉትን ያልተፈቀ ቦታ ላይ ያራገፈ</item>
+        <item>13.		ወደ ማይሄድበት ምልክት ያሳየ</item>
+        <item>14.		ፍሬቻ ሳያበራ የዞረ</item>
+        <item>15.		ተሸከርካሪ ደርቦ የቆመ</item>
+        <item>16.		በመታጠፊያ መንገድ ላይ ተሸከርካሪን ያቆመ</item>
+        <item>17.		የጉዞ ዘርፍን ሳይዝ ያሽከረከረ</item>
+        <item>18.		ሌሎች የትራፊክ ፍሰትን የሚያሰናክሉ ድርጊቶችን የፈፀመ</item>
+        <item>እነዚህ ቅጣቶች 120 ብር ያስቀጣሉ፡፡</item>
+    </string-array>
+    <string-array name="string_array_4th">
+        <item>1.		ቅድሚያ መስጠት እያለበት የከለከለ</item>
+        <item>2.		ባልተሟላ የመኪና መብራት የሚያሽከረክር</item>
+        <item>3.		የሚታጠፍበትን ረድፍ ሳይዝ የሚያሽከረክር</item>
+        <item>4.		ያላንፀባራቂ ምልክት የተበላሸን ተሸከርካሪ መንገድ ላይ ያቆመ</item>
+        <item>5.		በአዉቶቢስ መቆሚ ቦታ ላይ ተሸከርካሪን ያቆመ</item>
+        <item>6.		በተከለከለ ቦታ ላይ የጫነ ወይም ያወረደ</item>
+        <item>7.		ለእላፊ ተሸከርካሪ ቅድሚ የከለከለ</item>
+        <item>8.		የትራፊክ ደሴት ላይ ተሽከርካሪን ያቆመ</item>
+        <item>9.		ረዥም መብራት ወይመ ፓዉዛ አላስፈላጊ የሆነ ቦታ ላይ የተጠቀመ</item>
+        <item>10.		የቀስት አቅጣጫ የለቀቀ</item>
+        <item>11.		ከ13 ዓመት በታች የሆኑትን ሕፃናት ገቢና ዉስጥ የጫነ</item>
+        <item>12.		ለአምቡላንስ እና ለአደጋ መኪናዎች ቅድሚያ ያልሰጠ</item>
+        <item>13.		ሞባይል እያወራ ያሽከረከረ</item>
+        <item>14.		ምስል የሚያሳዩ ቲቪ ወይም ኮምፒዉተር እያየ ያሽከረከረ</item>
+        <item>15.		ተሸከርካሪዉ ላይ ከዉኃላ አንፀባራቂ ምልክት ሳያደርግበት ያሽከረከረ</item>
+        <item>16.		የትራፊክ ትዕዛዝ ያልፈፀመ</item>
+        <item>17.		ተሸለርካሪ ዉስጥ ሙዚቃ ወይም ሬዲዮ እና ተመሳሳይ ነገሮችን በከፍተኛ ድምፅ የከፈተ</item>
+        <item>18.		የአሽከርካሪን እይታ የሚገታ መጋረጃ ወይም ተለጣፊ ላስቲክ የለጠፈ</item>
+        <item>19.		ከተፈቀደ  የመጫን አቅም በላይ የጫነ</item>
+        <item>20.		የሚከለክል ምልክት የጣሰ</item>
+        <item>21.		ምልክት ሳያሳይ ተሸከርካሪን ከቆመበት ቦታ ያንቀሳቀሰ ወይም ያቆመ</item>
+        <item>22.		በባቡር ሀዲድ ላይ ጥንቃቄ ያላደረገ</item>
+        <item>23.		ሆስፒታል፣የእሳት አደጋ መከላከያ በር ላይ መኪናዉን ያቆመ</item>
+        <item>24.		ማንኛዉም መቆም በሚከለከልበት ቦታ ላይ መኪና ያቆመ</item>
+        <item>እነዚህ ቅጣቶች 140 ብር ያስቀጣሉ፡፡</item>
+    </string-array>
+    <string-array name="string_array_5th">
+        <item>1.		መስቀለኛ መንገድ ላይ ቅድሚያ መስጠት የከለከለ</item>
+        <item>2.		ተሸከርካሪ ሳይቆም በእንቅስቃሴ ላይ እያለ ሰዉ የጫነ ወይም ያወረደ</item>
+        <item>3.		የመኪና በር ሳይዘጋ  የሚያሽከረክር</item>
+        <item>4.		ከተፈቀደዉ በላይ እርዝመት፣ከፍታ እና ስፋት በላይ ጭነት ጭኖ ያሽከረከረ</item>
+        <item>5.		ከተፈቀደለት የወንበር ብዛት በላይ የጨመረ</item>
+        <item>6.		ሕጋዊ ፍቃድ ሳይኖረዉ የትራፊክ ፍሰትን ያወከ ወይም ያደናቀፈ</item>
+        <item>7.		የእግረኛ መንገድ ላይ መኪና ያቆመ</item>
+        <item>8.		ሕዝብ በሚበዛበት፣ ት/ቤት ፣ ሆስፒታሎች እና ገበያ አከባቢ ላይ ፍጥነት ሳይቀንስ ያሽከረከረ</item>
+        <item>9.		በመኪና ብልሽት ጊዜ የሚፈሰዉን ፈሳሽ ወይም ቆሻሻ ሳያነሳ መንገድ ያበላሸ አሽከርካሪ</item>
+        <item>10.		በመኪናዉ ላይ ያልተፈቀደ አካል የጨመረ</item>
+        <item>11.		መኪናዉ ላይ እይታን የሚከለክል ማሳመርያ የጨመረ</item>
+        <item>እነዚህ ቅጣቶች 160 ብር ያስቀጣሉ፡፡</item>
+    </string-array>
+    <string-array name="string_array_6th">
+        <item>1.ቀይ የትራፊክ መብራት የጣሰ</item>
+        <item>2.ለእግረኛ ቅድሚያ ያልሰጠ</item>
+        <item>3.ከተፈቀደዉ የፍጥነት ገደብ በላይ ያሽከረከረ</item>
+        <item>4.ምንም መብራት ሳይኖረዉ ያሽከረከረ</item>
+        <item>5.በተከለከለ መንገድ አቅጣጫ ያሽከረከረ</item>
+        <item>6.በተከለከለ ቦታ ላይ ጭነት የጫነ ወይም ያወረደ</item>
+        <item>7.የትራፊክ አደጋ ፈፅሞ ቦታዉ ላይ ያልቆመ</item>
+        <item>8.የአደጋ አገልግሎት ተሸከርካሪ ከተፈቀደለት በላይ ድምፅ ወይም ምልክት ከተገቢዉ በላይ የተጠቀመ</item>
+        <item>9.በጭነት ተሸከርካሪ ሰዉ የጫነ እና ሕፃናትን ከፊት አስቀምጦ ያሽከረከረ</item>
+        <item>10.በድልድይ ላይ ተሸከርካሪን ያቆመ</item>
+        <item>11.የሚያስገድዱ የትራፊክ ምልክት የጣሰ ወይም በማይፈቀድ ቦታ የዞረ</item>
+        <item>12.ከተማ ዉስጥ ከባድ መብራት ወይም ፓዉዛ የተጠቀመ</item>
+        <item>13.ሰክሮ፣ ጫት ቅሞ ወይም እየቃመ እና ማንኛዉም አደንዛዥ እፅ ተጠቅሞ የሚያሽከረክር</item>
+        <item>14.የትራፊክ አደጋ ፈፅሞ የተጎዳዉን ሰዉ ወደ ህክምና ወስዶ ሳያሳክም ጥሎት የሄደ</item>
+        <item>15.ሞባይል ስልክ እያወራ ወይም መልክት እየፃፈ ፣ እያነበበ እና በጆሮ ማዳመጫ እያዳመጠ ያሽከረከረ</item>
+        <item>16.ትራፊክ ቁም ብሎት አምልጦ የሄደ</item>
+        <item>እነዚህ ቅጣቶች 180 ብር ያስቀጣሉ፡፡</item>
+    </string-array>
+
+    <string name="welcome">Welcome</string>
+    <string name="logout">logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="hint_name">hint_name</string>
+    <string name="register">register</string>
+    <string name="btn_link_to_login">btn_link_to_login</string>
+    <string name="startAward">ጀምር</string>
+
+</resources>

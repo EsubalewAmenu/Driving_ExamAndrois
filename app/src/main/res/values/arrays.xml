@@ -1,0 +1,12 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="show_answer_entries">
+        <item>አዎ</item>
+        <item>አይ</item>
+    </string-array>
+
+    <string-array name="show_answer_values">
+        <item>y</item>
+        <item>n</item>
+    </string-array>
+</resources>

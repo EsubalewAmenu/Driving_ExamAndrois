@@ -43,7 +43,7 @@ public class Sign_Display extends AppCompatActivity {
             do{
                 itemname[i] = c.getString(2);
                 signimg[i] = getResources().getIdentifier(c.getString(1), "drawable", getApplicationContext().getPackageName());
-            i++;
+                i++;
             } while (c.moveToNext());
         }
 

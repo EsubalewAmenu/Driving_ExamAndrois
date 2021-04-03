@@ -73,20 +73,22 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8011674951494696/9834320933">
+    </com.google.android.gms.ads.AdView>
 
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/adViewQue"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        layout_weight="0"-->
-<!--        android:gravity="bottom"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        ads:adSize="SMART_BANNER"-->
-<!--        ads:adUnitId="ca-app-pub-8011674951494696/5852944052">-->
-<!--    </com.google.android.gms.ads.AdView>-->
+    <TextView
+        android:id="@+id/tvAds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize = "marquee"
+        />
 
     <com.herma.apps.drivertraining.questions.widgets.NoSwipeViewPager
         android:id="@+id/pager"

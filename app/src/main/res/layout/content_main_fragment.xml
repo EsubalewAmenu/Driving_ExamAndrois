@@ -8,16 +8,22 @@
     android:orientation="vertical"
     >
 
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        ads:adSize="SMART_BANNER"-->
-<!--        ads:adUnitId="ca-app-pub-8011674951494696/9600617372">-->
-<!--    </com.google.android.gms.ads.AdView>-->
+    <TextView
+        android:id="@+id/tvAds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:singleLine="true"
+        android:ellipsize = "marquee"
+        />
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8011674951494696/1641997967">
+    </com.google.android.gms.ads.AdView>
 
     <com.herma.apps.drivertraining.questions.widgets.NoSwipeViewPager
         android:id="@+id/pager"

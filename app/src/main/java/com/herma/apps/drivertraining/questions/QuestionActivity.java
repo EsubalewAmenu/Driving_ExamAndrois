@@ -1,14 +1,21 @@
 package com.herma.apps.drivertraining.questions;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.SystemClock;
+import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.text.style.RelativeSizeSpan;
+import android.text.util.Linkify;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,16 +27,21 @@ import androidx.viewpager.widget.ViewPager;
 import java.io.IOException;
 import java.util.ArrayList;
 
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
-//
-//import com.google.android.gms.ads.MobileAds;
-//import com.google.android.gms.ads.initialization.InitializationStatus;
-//import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
+import com.herma.apps.drivertraining.MainActivity;
 import com.herma.apps.drivertraining.R;
 import com.herma.apps.drivertraining.questions.adaptersj.ViewPagerAdapter;
 import com.herma.apps.drivertraining.questions.fragments.CheckBoxesFragment;
 import com.herma.apps.drivertraining.questions.fragments.RadioBoxesFragment;
+
+import static com.herma.apps.drivertraining.MainActivity.Ads;
 
 public class QuestionActivity extends AppCompatActivity
 {
@@ -55,9 +67,12 @@ public class QuestionActivity extends AppCompatActivity
     int per_exam;
 
     public String show_answer, packege;
+    TextView tvAds;
 
-//    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+    private AdView mAdView;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -79,16 +94,33 @@ try{
 //        }
             parsingData();
 
-//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-//            @Override
-//            public void onInitializationComplete(InitializationStatus initializationStatus) {
-//            }
-//        });
-//
-//        mAdView = findViewById(R.id.adViewQue);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+            tvAds = (TextView) findViewById(R.id.tvAds);
 
+            setAd();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-8011674951494696/2410308247");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
+        });
     }
     private void toolBarInit()
     {
@@ -247,4 +279,17 @@ try{
         }
     }
 
+    public void setAd(){
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            tvAds.setText(Html.fromHtml(Ads, Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            tvAds.setText(Html.fromHtml(Ads));
+        }
+
+        tvAds.setTextSize(MainActivity.Ads_font);
+        tvAds.setMovementMethod(LinkMovementMethod.getInstance());
+        tvAds.setSelected(true);
+
+    }
 }

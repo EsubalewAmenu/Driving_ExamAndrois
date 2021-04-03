@@ -5,12 +5,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +35,9 @@ import com.herma.apps.drivertraining.questions.DB;
 import com.herma.apps.drivertraining.questions.QuestionActivity;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * This fragment provide the RadioButton/Single Options.
@@ -43,10 +54,13 @@ public class QuestionsFragment extends Fragment
     ProgressBar unseenProgressBar;
     private FragmentActivity mContext;
 
+
     private boolean screenVisible = false;
     DB db;
 
     int countAll = 0, unseen=0;
+
+    WebView youtubeWebView;
 
     public QuestionsFragment()
     {
@@ -66,8 +80,12 @@ public class QuestionsFragment extends Fragment
         percentAnsQue = (TextView) rootView.findViewById(R.id.percentAnsQue);
         imgBadge = (ImageView) rootView.findViewById(R.id.imgBadge);
 
+        youtubeWebView = (WebView) rootView.findViewById(R.id.youtube_web_view);
+
         unseenProgressBar=(ProgressBar) rootView.findViewById(R.id.unseenProgressBar); // initiate the progress bar
         unseenProgressBar.setMax(100); // 100 maximum value for the progress bar
+
+
 
         open("read", "full.hrm");
 
@@ -122,7 +140,11 @@ db.close();
             startActivity(questions);
         });
 
+//        youtubeEmbeded();
+
         return rootView;
+
+
     }
     public void examResult(){
 
@@ -346,5 +368,42 @@ db.close();
             return phone.length() > 6 && phone.length() <= 13;
         }
         return false;
+    }
+
+    public void youtubeEmbededPlay(String url, String play_open){
+
+
+        if(play_open.equalsIgnoreCase("p")){
+            youtubeWebView.setVisibility(View.VISIBLE);
+            youtubeWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    return false;
+                }
+            });
+            WebSettings webSettings = youtubeWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setLoadWithOverviewMode(true);
+            webSettings.setUseWideViewPort(true);
+            youtubeWebView.loadUrl(url);
+        } else{
+            youtubeWebView.setVisibility(View.VISIBLE);
+            youtubeWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    return false;
+                }
+            });
+            WebSettings webSettings = youtubeWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setLoadWithOverviewMode(true);
+            webSettings.setUseWideViewPort(true);
+            youtubeWebView.loadUrl(url);
+
+//            Uri uriUrl = Uri.parse(url);
+//            Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+//            startActivity(launchBrowser);
+
+    }
     }
 }

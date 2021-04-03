@@ -302,9 +302,9 @@ public class RadioBoxesFragment extends Fragment
             rb.setTextColor(ContextCompat.getColor(mContext, R.color.grey));
 
             SharedPreferences pre = PreferenceManager.getDefaultSharedPreferences(((QuestionActivity) mContext));
-int view_gap;
-try{            view_gap = Integer.parseInt(pre.getString("view_gap", "anon"));
-        }catch (Exception klk) { view_gap = 70; }
+            int view_gap;
+            try{            view_gap = Integer.parseInt(pre.getString("view_gap", "anon"));
+            }catch (Exception klk) { view_gap = 70; }
 
             rb.setPadding(10, view_gap, 10, view_gap);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -365,15 +365,15 @@ try{            view_gap = Integer.parseInt(pre.getString("view_gap", "anon"));
             throw sqle;
         }
     }
-public void setSeen(String _id) { try{
-                        open("read", "full.hrm");
-                    Cursor c = db.getSelect("*", "que", "id="+_id);
+    public void setSeen(String _id) { try{
+        open("read", "full.hrm");
+        Cursor c = db.getSelect("*", "que", "id="+_id);
 
-                    if(c.moveToFirst()) {
-                        c = db.doExcute("UPDATE `que` SET `seen`='"+(c.getInt(c.getColumnIndex("seen"))+1)+"' WHERE `id`='"+_id+"';");
-c.moveToFirst();
+        if(c.moveToFirst()) {
+            c = db.doExcute("UPDATE `que` SET `seen`='"+(c.getInt(c.getColumnIndex("seen"))+1)+"' WHERE `id`='"+_id+"';");
+            c.moveToFirst();
 
-                    }
-                    db.close();
-}catch (Exception kl ) { System.out.println(kl); } }
+        }
+        db.close();
+    }catch (Exception kl ) { System.out.println(kl); } }
 }

@@ -1,6 +1,7 @@
 package com.herma.apps.drivertraining.questions;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -18,6 +19,7 @@ import android.text.style.RelativeSizeSpan;
 import android.text.util.Linkify;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -30,11 +32,13 @@ import java.util.ArrayList;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.herma.apps.drivertraining.MainActivity;
 import com.herma.apps.drivertraining.R;
 import com.herma.apps.drivertraining.questions.adaptersj.ViewPagerAdapter;
@@ -108,17 +112,17 @@ try{
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8011674951494696/2410308247");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        mInterstitialAd.setAdListener(new AdListener() {
+        InterstitialAd.load(getApplicationContext(), "ca-app-pub-8011674951494696/2410308247", adRequest, new InterstitialAdLoadCallback() {
             @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                }
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                mInterstitialAd = interstitialAd;
+                mInterstitialAd.show(QuestionActivity.this);
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                // Handle the error
+                mInterstitialAd = null;
             }
         });
     }

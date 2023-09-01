@@ -78,8 +78,8 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-8011674951494696/9834320933">
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_question_banner">
     </com.google.android.gms.ads.AdView>
 
     <TextView

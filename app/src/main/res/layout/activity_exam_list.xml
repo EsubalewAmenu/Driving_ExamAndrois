@@ -17,8 +17,8 @@
                     android:id="@+id/adView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    ads:adSize="SMART_BANNER"
-                    ads:adUnitId="ca-app-pub-8011674951494696/8289304974">
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/ad_exam_list">
                 </com.google.android.gms.ads.AdView>
 
         <ListView

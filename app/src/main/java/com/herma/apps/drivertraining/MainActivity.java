@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -29,6 +30,9 @@ import android.os.Message;
 import android.text.Html;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -47,6 +51,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +61,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.herma.apps.drivertraining.about.About_us;
 import com.herma.apps.drivertraining.questions.adaptersj.ViewPagerAdapter;
@@ -76,7 +82,6 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private AdView mAdView;
 
     public static String Ads = "";
     public static int Ads_font = 22;
@@ -86,6 +91,12 @@ public class MainActivity extends AppCompatActivity
     final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
     TextView tvAds;
+
+    private final AtomicBoolean isMobileAdsInitializeCalled = new AtomicBoolean(false);
+    private GoogleMobileAdsConsentManager googleMobileAdsConsentManager;
+    private AdView adView;
+    private FrameLayout adContainerView;
+    private AtomicBoolean initialLayoutComplete = new AtomicBoolean(false);
 
     @SuppressLint("MissingPermission")
     @Override
@@ -145,17 +156,48 @@ public class MainActivity extends AppCompatActivity
         fragmentViewPager.setOffscreenPageLimit(1);
         ViewPagerAdapter mPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentArrayList);
         fragmentViewPager.setAdapter(mPagerAdapter);
-//////////////////////////////////
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        ///////////////////////////////
+
+        adContainerView = findViewById(R.id.ad_view_container);
+
+        googleMobileAdsConsentManager =
+                GoogleMobileAdsConsentManager.getInstance(getApplicationContext());
+        googleMobileAdsConsentManager.gatherConsent(
+                this,
+                consentError -> {
+                    if (consentError != null) {
+                        // Consent not obtained in current session.
+                        Log.w(
+                                "consentError",
+                                String.format("%s: %s", consentError.getErrorCode(), consentError.getMessage()));
+                    }
+
+                    if (googleMobileAdsConsentManager.canRequestAds()) {
+                        initializeMobileAdsSdk();
+                    }
+
+                    if (googleMobileAdsConsentManager.isPrivacyOptionsRequired()) {
+                        // Regenerate the options menu to include a privacy setting.
+                        invalidateOptionsMenu();
+                    }
+                });
+
+        // This sample attempts to load ads using consent obtained in the previous session.
+        if (googleMobileAdsConsentManager.canRequestAds()) {
+            initializeMobileAdsSdk();
+        }
+
+        // Since we're loading the banner based on the adContainerView size, we need to wait until this
+        // view is laid out before we can get the width.
+        adContainerView
+                .getViewTreeObserver()
+                .addOnGlobalLayoutListener(
+                        () -> {
+                            if (!initialLayoutComplete.getAndSet(true)
+                                    && googleMobileAdsConsentManager.canRequestAds()) {
+                                loadBanner();
+                            }
+                        });
 
         tvAds = (TextView) findViewById(R.id.tvAds);
         /// Ad here...
@@ -238,6 +280,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem moreMenu = menu.findItem(R.id.action_more);
+        moreMenu.setVisible(googleMobileAdsConsentManager.isPrivacyOptionsRequired());
         return true;
     }
 
@@ -267,9 +311,101 @@ public class MainActivity extends AppCompatActivity
 
                 System.exit(0);
                 return true;
+            case R.id.privacy_settings:
+
+                // Handle changes to user consent.
+                googleMobileAdsConsentManager.showPrivacyOptionsForm(
+                        this,
+                        formError -> {
+                            if (formError != null) {
+                                Toast.makeText(this, formError.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
+    private void loadBanner() {
+        // Create a new ad view.
+        adView = new AdView(this);
+        adView.setAdUnitId(getString(R.string.ad_home_banner));
+        adView.setAdSize(getAdSize());
+
+        // Replace ad container with new ad view.
+        adContainerView.removeAllViews();
+        adContainerView.addView(adView);
+
+        // Start loading the ad in the background.
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+    }
+
+    private void initializeMobileAdsSdk() {
+        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+            return;
+        }
+
+        // Initialize the Mobile Ads SDK.
+        MobileAds.initialize(
+                this,
+                new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(InitializationStatus initializationStatus) {}
+                });
+
+        // Load an ad.
+        if (initialLayoutComplete.get()) {
+            loadBanner();
+        }
+    }
+
+    private AdSize getAdSize() {
+        // Determine the screen width (less decorations) to use for the ad width.
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = outMetrics.density;
+
+        float adWidthPixels = adContainerView.getWidth();
+
+        // If the ad hasn't been laid out, default to the full screen width.
+        if (adWidthPixels == 0) {
+            adWidthPixels = outMetrics.widthPixels;
+        }
+
+        int adWidth = (int) (adWidthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

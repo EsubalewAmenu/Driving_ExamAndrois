@@ -17,7 +17,16 @@ import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.RelativeSizeSpan;
 import android.text.util.Linkify;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,9 +37,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
@@ -39,6 +50,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.herma.apps.drivertraining.GoogleMobileAdsConsentManager;
 import com.herma.apps.drivertraining.MainActivity;
 import com.herma.apps.drivertraining.R;
 import com.herma.apps.drivertraining.questions.adaptersj.ViewPagerAdapter;
@@ -74,7 +86,12 @@ public class QuestionActivity extends AppCompatActivity
     TextView tvAds;
 
     private InterstitialAd mInterstitialAd;
-    private AdView mAdView;
+
+    private GoogleMobileAdsConsentManager googleMobileAdsConsentManager;
+    private AdView adView;
+    private AtomicBoolean initialLayoutComplete = new AtomicBoolean(false);
+    private final AtomicBoolean isMobileAdsInitializeCalled = new AtomicBoolean(false);
+    private FrameLayout adContainerView;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -91,28 +108,52 @@ try{
 
         toolBarInit();
 
-//        if (getIntent().getExtras() != null)
-//        {
-//            Bundle bundle = getIntent().getExtras();
-//            parsingData(bundle);
-//        }
             parsingData();
 
             tvAds = (TextView) findViewById(R.id.tvAds);
 
             setAd();
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
 
-        mAdView = findViewById(R.id.adView);
+        adContainerView = findViewById(R.id.ad_view_container);
+
+        googleMobileAdsConsentManager =
+                GoogleMobileAdsConsentManager.getInstance(getApplicationContext());
+        googleMobileAdsConsentManager.gatherConsent(
+                this,
+                consentError -> {
+                    if (consentError != null) {
+                        // Consent not obtained in current session.
+                        Log.w(
+                                "consentError",
+                                String.format("%s: %s", consentError.getErrorCode(), consentError.getMessage()));
+                    }
+
+                    if (googleMobileAdsConsentManager.canRequestAds()) {
+                        initializeMobileAdsSdk();
+                    }
+
+                    if (googleMobileAdsConsentManager.isPrivacyOptionsRequired()) {
+                        // Regenerate the options menu to include a privacy setting.
+                        invalidateOptionsMenu();
+                    }
+                });
+
+        // This sample attempts to load ads using consent obtained in the previous session.
+        if (googleMobileAdsConsentManager.canRequestAds()) {
+            initializeMobileAdsSdk();
+        }
+        adContainerView
+                .getViewTreeObserver()
+                .addOnGlobalLayoutListener(
+                        () -> {
+                            if (!initialLayoutComplete.getAndSet(true)
+                                    && googleMobileAdsConsentManager.canRequestAds()) {
+                                loadBanner();
+                            }
+                        });
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        InterstitialAd.load(getApplicationContext(), "ca-app-pub-8011674951494696/2410308247", adRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(getApplicationContext(), getString(R.string.interstitial), adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mInterstitialAd = interstitialAd;
@@ -160,7 +201,7 @@ try{
                 if(c.moveToFirst()) max = c.getInt(0);
                 do{
         questionsWithAnswer = db.getSelectArray("*", "que",  "seen >= (SELECT MIN(seen) FROM que) and seen <=" + max + " order by random() limit " + per_exam);//and id <=  "+(start+per_exam));
-                    max++;
+                    max+=1;
                 }while(questionsWithAnswer.length!=per_exam);
 
             }
@@ -295,5 +336,120 @@ try{
         tvAds.setMovementMethod(LinkMovementMethod.getInstance());
         tvAds.setSelected(true);
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_menu, menu);
+        MenuItem moreMenu = menu.findItem(R.id.action_more);
+        moreMenu.setVisible(googleMobileAdsConsentManager.isPrivacyOptionsRequired());
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        View menuItemView = findViewById(item.getItemId());
+        PopupMenu popup = new PopupMenu(this, menuItemView);
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+        popup.show();
+        popup.setOnMenuItemClickListener(
+                popupMenuItem -> {
+                    if (popupMenuItem.getItemId() == R.id.privacy_settings) {
+                        // Handle changes to user consent.
+                        googleMobileAdsConsentManager.showPrivacyOptionsForm(
+                                this,
+                                formError -> {
+                                    if (formError != null) {
+                                        Toast.makeText(this, formError.getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                        return true;
+                    }
+                    return false;
+                });
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
+
+
+    private void loadBanner() {
+        // Create a new ad view.
+        adView = new AdView(this);
+        adView.setAdUnitId(getString(R.string.ad_question_banner));
+        adView.setAdSize(getAdSize());
+
+        // Replace ad container with new ad view.
+        adContainerView.removeAllViews();
+        adContainerView.addView(adView);
+
+        // Start loading the ad in the background.
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+    }
+
+    private void initializeMobileAdsSdk() {
+        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+            return;
+        }
+
+        // Initialize the Mobile Ads SDK.
+        MobileAds.initialize(
+                this,
+                new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(InitializationStatus initializationStatus) {}
+                });
+
+        // Load an ad.
+        if (initialLayoutComplete.get()) {
+            loadBanner();
+        }
+    }
+
+    private AdSize getAdSize() {
+        // Determine the screen width (less decorations) to use for the ad width.
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density = outMetrics.density;
+
+        float adWidthPixels = adContainerView.getWidth();
+
+        // If the ad hasn't been laid out, default to the full screen width.
+        if (adWidthPixels == 0) {
+            adWidthPixels = outMetrics.widthPixels;
+        }
+
+        int adWidth = (int) (adWidthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
     }
 }

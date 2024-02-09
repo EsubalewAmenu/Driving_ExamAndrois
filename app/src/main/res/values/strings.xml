@@ -283,10 +283,14 @@
     <string name="btn_link_to_login">btn_link_to_login</string>
     <string name="startAward">ጀምር</string>
 
+    <string name="more_menu" translatable="false">More</string>
+    <string name="privacy_settings" translatable="false">Privacy Settings</string>
 
     <string name="ad_app_id">ca-app-pub-1204280332090356~4074247270</string>
     <string name="ad_home_banner">ca-app-pub-1204280332090356/6002153021</string>
     <string name="ad_exam_list">ca-app-pub-1204280332090356/9117777664</string>
     <string name="ad_question_banner">ca-app-pub-1204280332090356/1508374241</string>
+    <string name="interstitial">ca-app-pub-1204280332090356/7012688768</string>
+
 
 </resources>
